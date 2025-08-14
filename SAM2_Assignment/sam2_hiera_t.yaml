@@ -1,0 +1,43 @@
+# SAM 2 Hiera Tiny model configuration
+
+model:
+  _target_: sam2.modeling.sam2_base.SAM2Base
+  image_encoder:
+    _target_: sam2.modeling.backbones.hieradet.Hiera
+    embed_dim: 96
+    num_heads: [1, 2, 4, 8]
+    depths: [2, 3, 16, 3]
+    window_spec: [8, 4, 14, 7]
+    global_att_blocks: [12, 16, 20]
+    window_size: 14
+  memory_attention:
+    _target_: sam2.modeling.memory_attention.MemoryAttention
+    d_model: 256
+    pos_enc_at_input: true
+    layer:
+      _target_: sam2.modeling.memory_attention.MemoryAttentionLayer
+      activation: relu
+      dim_feedforward: 2048
+      dropout: 0.1
+      pos_enc_at_attn: false
+      self_attention:
+        _target_: sam2.modeling.memory_attention.MemoryAttention
+        d_model: 256
+        pos_enc_at_input: true
+        num_layers: 4
+  memory_encoder:
+    _target_: sam2.modeling.memory_encoder.MemoryEncoder
+    out_dim: 64
+  num_maskmem: 7
+  image_size: 1024
+  backbone_stride: 16
+  sigmoid_scale_for_mem_enc: 1.0
+  sigmoid_bias_for_mem_enc: 0.0
+  use_mask_input_as_output_without_sam: false
+  directly_add_no_mem_embed: false
+  use_high_res_features_in_sam: true
+  multimask_output_in_sam: true
+  multimask_min_pt_num: 0
+  multimask_max_pt_num: 1
+  use_multimask_token_for_obj_ptr: true
+  compile_image_encoder: false
