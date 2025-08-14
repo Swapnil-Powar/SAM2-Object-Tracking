@@ -53,7 +53,7 @@ The assignment uses the CMU10_3D dataset:
   - `can_chowder_000001_1_gt.png` (ground truth mask)
   - `can_chowder_000002.jpg` (target frame)
 
-## Expected Output
+## Output
 The assignment will:
 1. Download and extract the CMU10_3D dataset
 2. Process the first image and ground truth mask
