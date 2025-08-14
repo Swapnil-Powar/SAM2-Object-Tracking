@@ -84,8 +84,8 @@ relevant_mask = output_masks[1]
 The following large files are not included in this repository due to size constraints.  
 Please download them from Google Drive and place them in the project root before running the code.
 
-1. **sam2_hiera_tiny.pt** – [Download Link]([https://drive.google.com/your_model_file_link](https://drive.google.com/file/d/1pr9IdNueI_RtZJePGnNEToBPVO3QYlAH/view?usp=sharing))
-2. **CMU10_3D/data_2/core.l5239** – [Download Link]([https://drive.google.com/your_dataset_file_link](https://drive.google.com/drive/folders/1cFplc79RE0bnJETRBBq3AAbWdG-zbls8?usp=sharing))
+1. **sam2_hiera_tiny.pt** – [Download Link] (https://drive.google.com/file/d/1pr9IdNueI_RtZJePGnNEToBPVO3QYlAH/view?usp=sharing)
+2. **CMU10_3D/data_2/core.l5239** – [Download Link] (https://drive.google.com/drive/folders/1cFplc79RE0bnJETRBBq3AAbWdG-zbls8?usp=sharing)
 
 ## Technical Details
 - **Framework**: PyTorch with SAM2
